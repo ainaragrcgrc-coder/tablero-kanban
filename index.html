@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero Kanban</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Tablero Kanban</h1>
+    </header>
+
+    <main>
+        <button id="btnNuevaTarea">Nueva tarea</button>
+        <div id="modalNuevaTarea" class="modal oculto">
+
+    <div class="modal-contenido">
+
+        <h2>Nueva tarea</h2>
+
+        <form id="formNuevaTarea">
+
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" required>
+
+            <label for="descripcion">Descripción</label>
+            <textarea id="descripcion" required></textarea>
+
+            <label for="prioridad">Prioridad</label>
+            <select id="prioridad" required>
+                <option value="Baja">Baja</option>
+                <option value="Media">Media</option>
+                <option value="Alta">Alta</option>
+            </select>
+
+            <label for="fecha">Fecha límite</label>
+            <input type="date" id="fecha" required>
+
+            <button type="submit">Crear tarea</button>
+            <button type="button" id="btnCerrarModal">Cancelar</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+        <section class="tablero">
+
+            <div class="columna">
+                <h2>Por Hacer</h2>
+                <div id="todo" class="tarjetas"></div>
+            </div>
+
+            <div class="columna">
+                <h2>En Proceso</h2>
+                <div id="doing" class="tarjetas"></div>
+            </div>
+
+            <div class="columna">
+                <h2>Finalizado</h2>
+                <div id="done" class="tarjetas"></div>
+            </div>
+
+        </section>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
+

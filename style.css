@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f5f7;
+    color: #172b4d;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+main {
+    padding: 30px;
+}
+
+.tablero {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.columna {
+    background-color: #e4e6eb;
+    border-radius: 10px;
+    padding: 15px;
+    width: 33.33%;
+    min-height: 400px;
+}
+
+.columna h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.tarjetas {
+    min-height: 300px;
+}
+
+@media (max-width: 768px) {
+
+    .tablero {
+        flex-direction: column;
+    }
+
+    .columna {
+        width: 100%;
+    }
+
+    main {
+        padding: 15px;
+    }
+}
+.oculto {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal-contenido h2 {
+    margin-bottom: 20px;
+}
+
+.modal-contenido form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-contenido input,
+.modal-contenido textarea,
+.modal-contenido select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-contenido textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.modal-contenido button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

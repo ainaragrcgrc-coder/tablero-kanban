@@ -1,0 +1,77 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Diseñar maqueta en Figma",
+      "description": "Crear los wireframes y prototipos interactivos del tablero.",
+      "priority": "Alta",
+      "dueDate": "2026-09-15",
+      "status": "todo"
+    },
+    {
+      "id": "2",
+      "title": "Configurar json-server",
+      "description": "Iniciar la API simulada con las colecciones de tareas y comentarios.",
+      "priority": "Media",
+      "dueDate": "2026-09-10",
+      "status": "doing"
+    },
+    {
+      "id": "3",
+      "title": "Crear estructura HTML",
+      "description": "Preparar la estructura inicial del tablero Kanban.",
+      "priority": "Baja",
+      "dueDate": "2026-09-12",
+      "status": "done"
+    },
+    {
+      "title": "hola",
+      "description": ".",
+      "priority": "Baja",
+      "dueDate": "2026-09-08",
+      "status": "todo",
+      "id": "md3nTQHO_Bw"
+    },
+    {
+      "title": "hola",
+      "description": "..",
+      "priority": "Media",
+      "dueDate": "2026-09-11",
+      "status": "todo",
+      "id": "9Ef49HQB_Ks"
+    },
+    {
+      "title": "estructura",
+      "description": "..",
+      "priority": "Media",
+      "dueDate": "2026-09-23",
+      "status": "todo",
+      "id": "a9xqfxHzKiU"
+    },
+    {
+      "title": "hola",
+      "description": ".",
+      "priority": "Media",
+      "dueDate": "2026-09-30",
+      "status": "todo",
+      "id": "I6YViosz4iI"
+    }
+  ],
+  "comments": [
+    {
+      "id": "101",
+      "taskId": "1",
+      "author": "Ana Gómez",
+      "text": "Recuerda incluir los estados de hover en los botones del modal.",
+      "createdAt": "2026-09-06T10:30:00Z"
+    },
+    {
+      "id": "102",
+      "taskId": "1",
+      "author": "Carlos Ruiz",
+      "text": "Ya subí la paleta de colores al canal de Figma.",
+      "createdAt": "2026-09-06T11:15:00Z"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
