@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,67 +11,208 @@
 <body>
 
     <header>
+
+    <div class="cabecera">
+
         <h1>Tablero Kanban</h1>
-    </header>
 
-    <main>
-        <button id="btnNuevaTarea">Nueva tarea</button>
-        <div id="modalNuevaTarea" class="modal oculto">
-
-    <div class="modal-contenido">
-
-        <h2>Nueva tarea</h2>
-
-        <form id="formNuevaTarea">
-
-            <label for="titulo">Título</label>
-            <input type="text" id="titulo" required>
-
-            <label for="descripcion">Descripción</label>
-            <textarea id="descripcion" required></textarea>
-
-            <label for="prioridad">Prioridad</label>
-            <select id="prioridad" required>
-                <option value="Baja">Baja</option>
-                <option value="Media">Media</option>
-                <option value="Alta">Alta</option>
-            </select>
-
-            <label for="fecha">Fecha límite</label>
-            <input type="date" id="fecha" required>
-
-            <button type="submit">Crear tarea</button>
-            <button type="button" id="btnCerrarModal">Cancelar</button>
-
-        </form>
+        <button
+            id="btnMenu"
+            class="btn-menu"
+            type="button"
+            aria-label="Abrir menú"
+        >
+            ☰
+        </button>
 
     </div>
 
+    <nav id="menuNavegacion" class="menu-navegacion">
+
+        <a href="#">Inicio</a>
+        <a href="#">Tareas</a>
+
+    </nav>
+
+</header>
+
+    <main>
+
+        <button id="btnNuevaTarea">Nueva tarea</button>
+        <div class="buscador">
+    <label for="buscadorTareas">Buscar tarea</label>
+    <input
+        type="search"
+        id="buscadorTareas"
+        placeholder="Buscar por título..."
+    >
+</div>
+
+<div class="filtros">
+
+    <label for="filtroPrioridad">Prioridad</label>
+    <select id="filtroPrioridad">
+        <option value="">Todas</option>
+        <option value="Baja">Baja</option>
+        <option value="Media">Media</option>
+        <option value="Alta">Alta</option>
+    </select>
+
+    <label for="filtroEtiqueta">Etiqueta</label>
+    <select id="filtroEtiqueta">
+        <option value="">Todas</option>
+        <option value="Diseño">🎨 Diseño</option>
+        <option value="Desarrollo">💻 Desarrollo</option>
+        <option value="Documentación">📄 Documentación</option>
+        <option value="Urgente">🔥 Urgente</option>
+    </select>
+
+    <label for="filtroResponsable">Responsable</label>
+    <select id="filtroResponsable">
+        <option value="">Todos</option>
+    </select>
+
+</div>
+        <div class="estadisticas">
+    <span>Total: <strong id="totalTareas">0</strong></span>
+    <span>Por Hacer: <strong id="totalTodo">0</strong></span>
+    <span>En Proceso: <strong id="totalDoing">0</strong></span>
+    <span>Finalizado: <strong id="totalDone">0</strong></span>
+</div>
+
+        <div id="modalNuevaTarea" class="modal oculto">
+
+            <div class="modal-contenido">
+
+                <h2>Nueva tarea</h2>
+
+                <form id="formNuevaTarea">
+
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" required>
+
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" required></textarea>
+
+                    <label for="prioridad">Prioridad</label>
+                    <select id="prioridad" required>
+                        <option value="Baja">Baja</option>
+                        <option value="Media">Media</option>
+                        <option value="Alta">Alta</option>
+                    </select>
+
+                    <label for="responsable">Responsable</label>
+                    <select id="responsable" required>
+                  <option value="">Seleccionar responsable</option>
+                    </select>
+
+                    <label for="etiqueta">Etiqueta</label>
+                   <select id="etiqueta" required>
+                    <option value="">Seleccionar etiqueta</option>
+                    <option value="Diseño">🎨 Diseño</option>
+                   <option value="Desarrollo">💻 Desarrollo</option>
+                   <option value="Documentación">📄 Documentación</option>
+                    <option value="Urgente">🔥 Urgente</option>
+                   </select>
+
+                    <label for="fecha">Fecha límite</label>
+                    <input type="date" id="fecha" required>
+
+                    <button type="submit">Crear tarea</button>
+                    <button type="button" id="btnCerrarModal">Cancelar</button>
+
+                </form>
+
+            </div>
+
+        </div>
+        <div id="modalDetalleTarea" class="modal oculto">
+
+            <div class="modal-contenido">
+
+                <h2>Detalle de la tarea</h2>
+
+                <form id="formEditarTarea">
+
+                    <label for="detalleTitulo">Título</label>
+                    <input type="text" id="detalleTitulo" required>
+
+                    <label for="detalleDescripcion">Descripción</label>
+                    <textarea id="detalleDescripcion" required></textarea>
+
+                    <button type="submit">Guardar cambios</button>
+                    <button type="button" id="btnCerrarDetalle">Cerrar</button>
+
+                </form>
+
+                <hr>
+
+                <h3>Comentarios</h3>
+
+                <div id="listaComentarios"></div>
+
+                <form id="formComentario">
+
+                    <input
+                        type="text"
+                        id="autorComentario"
+                        placeholder="Tu nombre"
+                        required
+                    >
+
+                    <textarea
+                        id="textoComentario"
+                        placeholder="Escribe un comentario..."
+                        required
+                    ></textarea>
+
+                    <button type="submit">Añadir comentario</button>
+
+                </form>
+
+                <button type="button" id="btnEliminarTarea">
+                    Eliminar tarea
+                </button>
+
+            </div>
+
+        </div>
+<div class="gestion-columnas">
+    <input
+        type="text"
+        id="nombreColumna"
+        placeholder="Nombre de la nueva columna"
+    >
+
+    <button id="btnNuevaColumna">
+        + Añadir columna
+    </button>
 </div>
 
         <section class="tablero">
 
             <div class="columna">
                 <h2>Por Hacer</h2>
-                <div id="todo" class="tarjetas"></div>
+                <div id="todo" class="tarjetas" data-status="todo"></div>
             </div>
 
             <div class="columna">
                 <h2>En Proceso</h2>
-                <div id="doing" class="tarjetas"></div>
+                <div id="doing" class="tarjetas" data-status="doing"></div>
             </div>
 
             <div class="columna">
                 <h2>Finalizado</h2>
-                <div id="done" class="tarjetas"></div>
+                <div id="done" class="tarjetas" data-status="done"></div>
             </div>
 
         </section>
+
     </main>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="script.js"></script>
 
 </body>
-</html>
 
+</html>

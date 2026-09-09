@@ -25,36 +25,40 @@
       "status": "done"
     },
     {
-      "title": "hola",
-      "description": ".",
+      "title": "Asignar usuario",
+      "description": "poder asignar usuarios",
+      "priority": "Media",
+      "dueDate": "2026-09-16",
+      "status": "done",
+      "assignedTo": "3",
+      "id": "tRh7NgO8gKA"
+    },
+    {
+      "title": "Etiquetas",
+      "description": "asignar responsable y establecer etiquetas",
       "priority": "Baja",
-      "dueDate": "2026-09-08",
-      "status": "todo",
-      "id": "md3nTQHO_Bw"
-    },
-    {
-      "title": "hola",
-      "description": "..",
-      "priority": "Media",
-      "dueDate": "2026-09-11",
-      "status": "todo",
-      "id": "9Ef49HQB_Ks"
-    },
-    {
-      "title": "estructura",
-      "description": "..",
-      "priority": "Media",
-      "dueDate": "2026-09-23",
-      "status": "todo",
-      "id": "a9xqfxHzKiU"
-    },
-    {
-      "title": "hola",
-      "description": ".",
-      "priority": "Media",
       "dueDate": "2026-09-30",
-      "status": "todo",
-      "id": "I6YViosz4iI"
+      "status": "revisión",
+      "assignedTo": "3",
+      "tag": "Diseño",
+      "id": "fcl4Sj_DYz4"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Ana Gómez",
+      "avatar": "AG"
+    },
+    {
+      "id": "2",
+      "name": "Carlos Ruiz",
+      "avatar": "CR"
+    },
+    {
+      "id": "3",
+      "name": "Ainara",
+      "avatar": "AI"
     }
   ],
   "comments": [
@@ -71,6 +75,12 @@
       "author": "Carlos Ruiz",
       "text": "Ya subí la paleta de colores al canal de Figma.",
       "createdAt": "2026-09-06T11:15:00Z"
+    },
+    {
+      "taskId": "2",
+      "author": "ainara",
+      "text": ".",
+      "id": "d-RGpM7N_VA"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

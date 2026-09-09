@@ -1,3 +1,7 @@
+/* ==============================
+   CONFIGURACIÓN GENERAL
+   ============================== */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,49 +10,468 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f5f7;
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
     color: #172b4d;
+    min-height: 100vh;
 }
 
+
+/* ==============================
+   CABECERA
+   ============================== */
+
 header {
-    background-color: #ffffff;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+    padding: 25px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 header h1 {
-    font-size: 28px;
+    font-size: 30px;
+    letter-spacing: 1px;
 }
+
+
+/* ==============================
+   MENÚ
+   ============================== */
+
+.btn-menu {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    font-size: 24px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-navegacion {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.menu-navegacion a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.menu-navegacion a:hover {
+    opacity: 0.8;
+}
+
+
+/* ==============================
+   CONTENIDO
+   ============================== */
 
 main {
     padding: 30px;
+    max-width: 1400px;
+    margin: auto;
 }
+
+
+/* ==============================
+   BOTÓN NUEVA TAREA
+   ============================== */
+
+#btnNuevaTarea {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 20px;
+
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.25);
+    transition: 0.2s;
+}
+
+#btnNuevaTarea:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(79, 70, 229, 0.35);
+}
+
+
+/* ==============================
+   BUSCADOR
+   ============================== */
+
+.buscador {
+    background: white;
+    padding: 15px 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.buscador label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #312e81;
+}
+
+.buscador input {
+    width: 100%;
+    padding: 12px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    font-size: 14px;
+    outline: none;
+}
+
+.buscador input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+
+/* ==============================
+   ESTADÍSTICAS
+   ============================== */
+
+.estadisticas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.estadisticas span {
+    background: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+
+    font-size: 14px;
+}
+
+.estadisticas strong {
+    color: #4f46e5;
+    font-size: 17px;
+}
+
+
+/* ==============================
+   TABLERO
+   ============================== */
 
 .tablero {
     display: flex;
-    gap: 20px;
+    gap: 24px;
     align-items: flex-start;
 }
 
+
+/* ==============================
+   COLUMNAS
+   ============================== */
+
 .columna {
-    background-color: #e4e6eb;
-    border-radius: 10px;
-    padding: 15px;
+    background-color: #e8ebf3;
+    border-radius: 14px;
+    padding: 18px;
+
     width: 33.33%;
     min-height: 400px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    transition: 0.2s;
+}
+
+.columna:hover {
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.12);
 }
 
 .columna h2 {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     font-size: 20px;
+    color: #312e81;
 }
+
+
+/* ==============================
+   ZONA DE TARJETAS
+   ============================== */
 
 .tarjetas {
     min-height: 300px;
 }
 
+
+/* ==============================
+   TARJETAS DE TAREAS
+   ============================== */
+
+.tarjeta {
+    background-color: white;
+
+    padding: 16px;
+    margin-bottom: 12px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+
+    cursor: grab;
+
+    transition: 0.2s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta:active {
+    cursor: grabbing;
+}
+
+
+/* ==============================
+   BOTONES GENERALES
+   ============================== */
+
+button {
+    font-family: inherit;
+}
+
+.modal-contenido button {
+    padding: 11px;
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.modal-contenido button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* ==============================
+   MODALES
+   ============================== */
+
+.oculto {
+    display: none !important;
+}
+
+.modal {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(15, 23, 42, 0.65);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.modal-contenido {
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 16px;
+
+    width: 90%;
+    max-width: 500px;
+
+    max-height: 90vh;
+    overflow-y: auto;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.modal-contenido h2 {
+    margin-bottom: 20px;
+    color: #312e81;
+}
+
+.modal-contenido h3 {
+    margin-top: 20px;
+    margin-bottom: 12px;
+    color: #312e81;
+}
+
+
+/* ==============================
+   FORMULARIOS
+   ============================== */
+
+.modal-contenido form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-contenido label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.modal-contenido input,
+.modal-contenido textarea,
+.modal-contenido select {
+    padding: 12px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+}
+
+.modal-contenido input:focus,
+.modal-contenido textarea:focus,
+.modal-contenido select:focus {
+    border-color: #6366f1;
+
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.modal-contenido textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+
+/* ==============================
+   SEPARADOR
+   ============================== */
+
+.modal-contenido hr {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 20px 0;
+}
+
+
+/* ==============================
+   COMENTARIOS
+   ============================== */
+
+#listaComentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#listaComentarios > div {
+    background-color: #f3f4f6;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+
+/* ==============================
+   BOTÓN ELIMINAR
+   ============================== */
+
+#btnEliminarTarea {
+    margin-top: 20px;
+
+    width: 100%;
+
+    background-color: #dc2626;
+    color: white;
+
+    padding: 11px;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#btnEliminarTarea:hover {
+    background-color: #b91c1c;
+}
+
+
+/* ==============================
+   RESPONSIVE - MÓVIL
+   ============================== */
+
 @media (max-width: 768px) {
+
+    main {
+        padding: 15px;
+    }
+
+    header {
+        padding: 20px 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .cabecera {
+        justify-content: flex-start;
+    }
+
+    .btn-menu {
+        display: block;
+    }
+
+    .menu-navegacion {
+        display: none;
+
+        flex-direction: column;
+        align-items: center;
+
+        gap: 10px;
+
+        margin-top: 15px;
+    }
+
+    .menu-navegacion.menu-abierto {
+        display: flex;
+    }
 
     .tablero {
         flex-direction: column;
@@ -58,61 +481,16 @@ main {
         width: 100%;
     }
 
-    main {
-        padding: 15px;
+    .estadisticas {
+        flex-direction: column;
+    }
+
+    .estadisticas span {
+        width: 100%;
+    }
+
+    .modal-contenido {
+        padding: 20px;
     }
 }
-.oculto {
-    display: none;
-}
-
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-contenido {
-    background-color: white;
-    padding: 25px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 500px;
-}
-
-.modal-contenido h2 {
-    margin-bottom: 20px;
-}
-
-.modal-contenido form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.modal-contenido input,
-.modal-contenido textarea,
-.modal-contenido select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.modal-contenido textarea {
-    min-height: 100px;
-    resize: vertical;
-}
-
-.modal-contenido button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+```
