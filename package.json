@@ -1,5 +1,17 @@
 {
+  "name": "tablero-kanban",
+  "version": "1.0.0",
+  "description": "Aplicación Kanban para gestión de tareas",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server db.json",
+    "server": "json-server db.json",
+    "open": "open-cli http://localhost:3000"
+  },
   "dependencies": {
     "json-server": "^1.0.0-beta.15"
+  },
+  "devDependencies": {
+    "open-cli": "^8.0.0"
   }
 }
